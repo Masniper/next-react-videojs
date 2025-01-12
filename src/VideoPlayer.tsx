@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
@@ -8,30 +8,37 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ options, onReady }) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<videojs.Player | null>(null);
 
   useEffect(() => {
-    if (!playerRef.current && videoRef.current) {
-      const player = videojs(videoRef.current, options, () => {
-        if (onReady) {
-          onReady(player);
-        }
-      });
-      playerRef.current = player;
-    }
+    if (!playerRef.current) {
+      const videoElement = document.createElement("video-js");
+      videoElement.classList.add("vjs-big-play-centered");
+      videoRef.current?.appendChild(videoElement);
 
+      const player = (playerRef.current = videojs(videoElement, options, () => {
+        onReady && onReady(player);
+      }));
+    } else {
+      const player = playerRef.current;
+      player.autoplay(options.autoplay ?? false);
+      player.src(options.sources ?? []);
+    }
+  }, [options]);
+
+  useEffect(() => {
     return () => {
-      if (playerRef.current) {
+      if (playerRef.current && !playerRef.current.isDisposed()) {
         playerRef.current.dispose();
         playerRef.current = null;
       }
     };
-  }, [options, onReady]);
+  }, []);
 
   return (
     <div data-vjs-player>
-      <video ref={videoRef} className="video-js"></video>
+      <div ref={videoRef} />
     </div>
   );
 };
