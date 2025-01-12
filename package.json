@@ -1,6 +1,6 @@
 {
   "name": "@masniper/next-react-videojs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Next.js and React library for Video.js with full feature support.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -36,11 +36,6 @@
   ],
   "author": "Masniper",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "video.js": "^8.0.0"
-  },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
