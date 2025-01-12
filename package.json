@@ -1,7 +1,7 @@
 {
   "name": "next-react-videojs",
   "version": "0.1.0",
-  "description": "A React Library for Video.js with full feature support.",
+  "description": "A Next.js and React library for Video.js with full feature support.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -59,7 +59,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/masniper/react-videojs.git"
+    "url": "https://github.com/masniper/next-react-videojs.git"
   },
   "homepage": "https://github.com/masniper/react-videojs#readme",
   "bugs": {
