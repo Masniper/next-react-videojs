@@ -5,7 +5,7 @@ A reusable React library for integrating Video.js with full feature support. Thi
 ## Features
 
 - Full support for Video.js features, including playback controls, custom skins, and plugins.
-- React 18 and Next.js compatibility.
+- React and Next.js compatibility.
 - Support for multiple video formats (e.g., MP4, OGG, HLS, DASH).
 - Customizable options for autoplay, controls, playback rates, and more.
 - Lightweight and easy to integrate.
