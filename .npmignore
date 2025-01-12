@@ -1,0 +1,7 @@
+src/
+node_modules/
+rollup.config.mjs
+tsconfig.json
+.eslintignore
+.eslintrc.json
+*.log
