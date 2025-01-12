@@ -2,6 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
 
 export default {
   input: "src/index.ts",
@@ -22,6 +23,7 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
+    postcss(), // اضافه کردن پلاگین برای پردازش CSS
   ],
   external: ["react", "react-dom", "video.js"],
 };

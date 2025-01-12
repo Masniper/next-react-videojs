@@ -1,35 +1,68 @@
 {
-  "name": "react-videojs",
+  "name": "next-react-videojs",
   "version": "0.1.0",
-  "description": "A React component for Video.js with full feature support.",
+  "description": "A React Library for Video.js with full feature support.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint src/**/*.ts src/**/*.tsx"
   },
   "keywords": [
     "react",
     "videojs",
+    "video.js",
     "player",
-    "video"
+    "video",
+    "react-video",
+    "react-video-player",
+    "react-library",
+    "media-player",
+    "video-player",
+    "html5-player",
+    "react-component",
+    "video-component",
+    "react-video-component",
+    "javascript-video-player",
+    "streaming",
+    "live-stream",
+    "vod",
+    "video-streaming",
+    "custom-video-player",
+    "video-plugin",
+    "modern-video-player"
   ],
-  "author": "Your Name",
+  "author": "Masniper",
   "license": "MIT",
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "video.js": "^8.21.0"
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "video.js": "^8.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.4",
-    "@types/react-dom": "^19.0.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/video.js": "^7.2.2",
     "rollup": "^4.30.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.7.3"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masniper/react-videojs.git"
+  },
+  "homepage": "https://github.com/masniper/react-videojs#readme",
+  "bugs": {
+    "url": "https://github.com/masniper/react-videojs/issues"
   }
 }
