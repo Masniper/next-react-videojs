@@ -1,6 +1,6 @@
 {
-  "name": "next-react-videojs",
-  "version": "0.1.2",
+  "name": "@masniper/next-react-videojs",
+  "version": "0.1.0",
   "description": "A Next.js and React library for Video.js with full feature support.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

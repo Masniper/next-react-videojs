@@ -12,6 +12,8 @@ A reusable React library for integrating Video.js with full feature support. Thi
 
 ## Installation
 
+### From npm (Public Registry)
+
 Install the package via npm:
 
 ```bash
@@ -22,6 +24,21 @@ Or using Yarn:
 
 ```bash
 yarn add next-react-videojs
+```
+
+### From GitHub Packages
+
+If you want to install from GitHub Packages:
+
+```bash
+npm install @masniper/next-react-videojs --registry=https://npm.pkg.github.com/
+```
+
+Make sure your `.npmrc` file is configured with the following:
+
+```bash
+@masniper:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=<your-personal-access-token>
 ```
 
 ## Usage
@@ -191,3 +208,4 @@ If you encounter any issues or have suggestions, please create an issue in the [
 ## Contributions
 
 Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
+
