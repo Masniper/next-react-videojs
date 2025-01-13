@@ -26,21 +26,6 @@ Or using Yarn:
 yarn add next-react-videojs
 ```
 
-### From GitHub Packages
-
-If you want to install from GitHub Packages:
-
-```bash
-npm install @masniper/next-react-videojs --registry=https://npm.pkg.github.com/
-```
-
-Make sure your `.npmrc` file is configured with the following:
-
-```bash
-@masniper:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=<your-personal-access-token>
-```
-
 ## Usage
 
 Here’s an example of how to use the `next-react-videojs` component:
@@ -55,33 +40,54 @@ const App = () => {
   const videoJsOptions = {
     autoplay: false,
     controls: true,
-    responsive: true,
-    fluid: true,
-    poster: "https://upload.wikimedia.org/wikipedia/commons/5/51/Video_poster.jpg",
+    preload: 'auto',
+    responsive: true, 
+    fluid: true, 
     playbackRates: [0.5, 1, 1.5, 2],
+    loop: true,
+    muted: false, 
+    poster: 'https://hoststreamsell-pics.s3.amazonaws.com/600c26a209974338f4a579055e7ef61f_big.jpg',
+    language: 'en',
+    aspectRatio: '16:9', 
     sources: [
       {
-        src: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-        type: "video/mp4",
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        type: 'video/mp4',
       },
       {
-        src: "https://media.w3.org/2010/05/sintel/trailer.ogv",
-        type: "video/ogg",
+        src: 'https://www.w3schools.com/html/movie.ogg',
+        type: 'video/ogg',
       },
     ],
     tracks: [
       {
-        kind: "captions",
-        src: "https://media.w3.org/2010/05/sintel/captions.vtt",
-        srclang: "en",
-        label: "English",
-        default: true,
+        kind: 'captions', 
+        src: 'https://example.com/captions.vtt',
+        srclang: 'en',
+        label: 'English', 
+        default: true, 
       },
     ],
+    plugins: {
+      examplePlugin: {}, //optional plugin
+    },
   };
 
+
   const handlePlayerReady = (player) => {
-    console.log("Player is ready!", player);
+    console.log("Player is ready:", player);
+
+    player.on("play", () => {
+      console.log("Video is playing");
+    });
+
+    player.on("pause", () => {
+      console.log("Video is paused");
+    });
+
+    player.on("ended", () => {
+      console.log("Video ended");
+    });
   };
 
   return <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />;
@@ -101,32 +107,55 @@ const Home = () => {
   const videoJsOptions = {
     autoplay: false,
     controls: true,
-    responsive: true,
-    fluid: true,
-    poster: "https://upload.wikimedia.org/wikipedia/commons/5/51/Video_poster.jpg",
+    preload: 'auto',
+    responsive: true, 
+    fluid: true, 
     playbackRates: [0.5, 1, 1.5, 2],
+    loop: true,
+    muted: false, 
+    poster: 'https://hoststreamsell-pics.s3.amazonaws.com/600c26a209974338f4a579055e7ef61f_big.jpg',
+    language: 'en',
+    aspectRatio: '16:9', 
     sources: [
       {
-        src: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-        type: "video/mp4",
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        type: 'video/mp4',
       },
       {
-        src: "https://media.w3.org/2010/05/sintel/trailer.ogv",
-        type: "video/ogg",
+        src: 'https://www.w3schools.com/html/movie.ogg',
+        type: 'video/ogg',
       },
     ],
     tracks: [
       {
-        kind: "captions",
-        src: "https://media.w3.org/2010/05/sintel/captions.vtt",
-        srclang: "en",
-        label: "English",
-        default: true,
+        kind: 'captions', 
+        src: 'https://example.com/captions.vtt',
+        srclang: 'en',
+        label: 'English', 
+        default: true, 
       },
     ],
+    plugins: {
+      examplePlugin: {}, //optional plugin
+    },
+  };
+    const handlePlayerReady = (player) => {
+    console.log("Player is ready:", player);
+
+    player.on("play", () => {
+      console.log("Video is playing");
+    });
+
+    player.on("pause", () => {
+      console.log("Video is paused");
+    });
+
+    player.on("ended", () => {
+      console.log("Video ended");
+    });
   };
 
-  return <VideoPlayer options={videoJsOptions} />;
+  return <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />;
 };
 
 export default Home;
@@ -146,31 +175,39 @@ export default Home;
 
 ```json
 {
-  "autoplay": false,
-  "controls": true,
-  "responsive": true,
-  "fluid": true,
-  "poster": "https://upload.wikimedia.org/wikipedia/commons/5/51/Video_poster.jpg",
-  "playbackRates": [0.5, 1, 1.5, 2],
-  "sources": [
-    {
-      "src": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-      "type": "video/mp4"
+    "autoplay": false,
+    "controls": true,
+    "preload": "auto",
+    "responsive": true, 
+    "fluid": true, 
+    "playbackRates": [0.5, 1, 1.5, 2],
+    "loop": true,
+    "muted": false, 
+    "poster": "https://hoststreamsell-pics.s3.amazonaws.com/600c26a209974338f4a579055e7ef61f_big.jpg",
+    "language": "en",
+    "aspectRatio": "16:9", 
+    "sources": [
+      {
+        "src": "https://www.w3schools.com/html/mov_bbb.mp4",
+        "type": "video/mp4",
+      },
+      {
+        "src": "https://www.w3schools.com/html/movie.ogg",
+        "type": "video/ogg",
+      },
+    ],
+    "tracks": [
+      {
+        "kind": "captions", 
+        "src": "https://example.com/captions.vtt",
+        "srclang": "en",
+        "label": "English", 
+        "default": true, 
+      },
+    ],
+    "plugins": {
+      "examplePlugin": {}, //optional plugin
     },
-    {
-      "src": "https://media.w3.org/2010/05/sintel/trailer.ogv",
-      "type": "video/ogg"
-    }
-  ],
-  "tracks": [
-    {
-      "kind": "captions",
-      "src": "https://media.w3.org/2010/05/sintel/captions.vtt",
-      "srclang": "en",
-      "label": "English",
-      "default": true
-    }
-  ]
 }
 ```
 
@@ -208,4 +245,3 @@ If you encounter any issues or have suggestions, please create an issue in the [
 ## Contributions
 
 Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
-

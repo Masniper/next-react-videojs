@@ -23,7 +23,7 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    postcss(), // اضافه کردن پلاگین برای پردازش CSS
+    postcss(),
   ],
   external: ["react", "react-dom", "video.js"],
 };
